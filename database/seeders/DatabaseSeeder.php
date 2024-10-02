@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             BrandSeeder::class,
-            PhoneSeeder::class
+            PhoneSeeder::class,
+            CompatibilitiesSeeder::class
         ]);
     }
 }

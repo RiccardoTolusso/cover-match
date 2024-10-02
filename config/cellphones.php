@@ -20,12 +20,26 @@ return [
         'tcl'
     ],
 
+    'compatibilities' => [
+        [
+            "model_1" => ["brand" => "apple", "model" => "iPhone 7"],
+            "model_2" => ["brand" => "apple", "model" => "iPhone 8"]
+        ],
+        [
+            "model_1" => ["brand" => "apple", "model" => "iPhone 7"],
+            "model_2" => ["brand" => "apple", "model" => "iPhone SE"]
+        ],
+        [
+            "model_1" => ["brand" => "apple", "model" => "iPhone 8"],
+            "model_2" => ["brand" => "apple", "model" => "iPhone SE"]
+        ],
+    ],
+
     'apple' => [
         'iPhone 6',
         'iPhone 6 Plus',
         'iPhone 6S',
         'iPhone 6S Plus',
-        'iPhone SE (1st generation)',
         'iPhone 7',
         'iPhone 7 Plus',
         'iPhone 8',
@@ -37,7 +51,7 @@ return [
         'iPhone 11',
         'iPhone 11 Pro',
         'iPhone 11 Pro Max',
-        'iPhone SE (2nd generation)',
+        'iPhone SE',
         'iPhone 12 mini',
         'iPhone 12',
         'iPhone 12 Pro',
