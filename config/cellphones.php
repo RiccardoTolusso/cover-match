@@ -60,7 +60,6 @@ return [
         'iPhone 13',
         'iPhone 13 Pro',
         'iPhone 13 Pro Max',
-        'iPhone SE (3rd generation)',
         'iPhone 14',
         'iPhone 14 Plus',
         'iPhone 14 Pro',

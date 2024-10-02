@@ -11,7 +11,7 @@
             @foreach ($models as $model)
                 <div class="col">
                     <a href="{{ route('model', [$brand_name, $model->id]) }}"
-                        class="btn btn-warning w-100 py-4 text-capitalize">
+                        class="btn btn-warning w-100 h-100 py-4 text-capitalize">
                         <h2>
                             {{ str_replace('_', ': ', $model->name) }}
                         </h2>
