@@ -23,7 +23,7 @@ Route::get('/', function () {
     } else {
         return view('welcome');
     }
-});
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     // auth protected routes
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cerca/{brand_name}/{model_id}', [SearchController::class, 'info'])->name("model");
 
     Route::get('/compatibilita/{brand_name}/{model_id}', [CompatibilityController::class, 'create'])->name("create_compatibility");
-    Route::post('/compatibilita', [CompatibilityController::class, 'store'])->name("store_compatibility");
+    Route::post('/compatibilita/{brand_name}/{model_id}', [CompatibilityController::class, 'store'])->name("store_compatibility");
 });
 
 require __DIR__ . '/auth.php';
