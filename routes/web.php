@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BaseAdminController;
 use App\Http\Controllers\Auth\CompatibilityController;
 use App\Http\Controllers\Auth\SearchController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/compatibilita/{brand_name}/{model_id}', [CompatibilityController::class, 'create'])->name("create_compatibility");
     Route::post('/compatibilita/{brand_name}/{model_id}', [CompatibilityController::class, 'store'])->name("store_compatibility");
+});
+
+Route::middleware('auth', 'admin')->group(function () {
+    Route::get('/admin', [BaseAdminController::class, 'index'])->name('admin');
+    Route::post('/admin/aggiungi_modello', [BaseAdminController::class, 'store_model'])->name('store_model');
+    Route::patch('/admin/modifica_compatibilita', [BaseAdminController::class, 'edit_compatibility'])->name('edit_compatibility');
 });
 
 require __DIR__ . '/auth.php';

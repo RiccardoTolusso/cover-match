@@ -16,7 +16,13 @@
             <div class="col">
                 <h3>Compatibilità</h3>
                 @foreach ($model->compatibilities as $compatibility)
-                    <h5>{{ $compatibility->name }}</h5>
+                    @if ($compatibility->pivot->possible)
+                        @if ($compatibility->pivot->verified)
+                            <h5 class="text-success fw-bold">&checkmark; {{ $compatibility->name }}</h5>
+                        @else
+                            <h5>&quest; {{ $compatibility->name }}</h5>
+                        @endif
+                    @endif
                 @endforeach
             </div>
         </div>
